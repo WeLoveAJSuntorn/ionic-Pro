@@ -5,7 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StatusBar } from '@ionic-native/status-bar';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { Config } from '../config';
-
+import { AngularFireModule } from 'angularfire2';
+import { AuthService } from '../services/auth.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { firebaseConfig } from '../config';
+import { LoginPage } from '../pages/login/login';
+import { NgxErrorsModule } from '@ultimate/ngxerrors';
+import { SignupPage } from '../pages/signup/signup';
 import { ComponentsModule } from '../pages/components/components.module';
 import { GoogleMapsModule } from '../pages/google-maps/google-maps.module';
 import { HomeModule } from '../pages/home/home.module';
@@ -15,27 +21,34 @@ import { MyApp } from './app.component';
 
 @NgModule({
 	declarations: [
-		MyApp
+		MyApp,
+		LoginPage,
+		SignupPage
 	],
 	imports: [
 		BrowserModule,
 		HttpModule,
 		IonicModule.forRoot(MyApp),
 		AgmCoreModule.forRoot(),
-
+		AngularFireModule.initializeApp(firebaseConfig.fire),
 		ComponentsModule,
 		GoogleMapsModule,
 		HomeModule,
 		SlideBoxModule,
-		WordpressModule
+		WordpressModule,
+		NgxErrorsModule,
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [
-		MyApp
+		MyApp,
+		LoginPage,
+		SignupPage
 	],
 	providers: [
 		Config,
-		StatusBar
+		StatusBar,
+		AngularFireAuth,
+		AuthService
 	]
 })
 export class AppModule {
