@@ -6,6 +6,7 @@ import { ComponentsListPage } from '../pages/components/list/components.list.pag
 import { GoogleMapsPage } from '../pages/google-maps/google-maps.page';
 
 import { HomePage } from '../pages/home/home.page';
+import { TeamsPage } from '../pages/teams/teams';
 import { SlideBoxPage } from '../pages/slide-box/slide-box.page';
 import { WordpressListPage } from '../pages/wordpress/list/wordpress.list.page';
 import { LoginPage } from '../pages/login/login';
@@ -36,7 +37,7 @@ export class MyApp {
 			// { title: 'Google maps', component: GoogleMapsPage, icon: 'map' },
 			// { title: 'Components', component: ComponentsListPage, icon: 'grid' }
 			{ title: 'Home', component: HomePage, icon: 'home' },
-			{ title: 'Teams', component: HomePage, icon: 'ios-people' },
+			{ title: 'Teams', component: TeamsPage, icon: 'md-people' },
 			{ title: 'Cartoons', component : HomePage, icon: 'ios-book'}
 			
 			
@@ -69,11 +70,11 @@ export class MyApp {
 		this.nav.setRoot(LoginPage);
 	}
 
-	logout() {
-		this.menu.close();
-		this.auth.signOut();
-		this.nav.setRoot(HomePage);
-	}
+	// logout() {
+	// 	this.menu.close();
+	// 	this.auth.signOut();
+	// 	this.nav.setRoot(HomePage);
+	// }
 	
 	openPage(page) {
 		this.auth.afAuth.authState

@@ -39,6 +39,7 @@
     "ionicons": "4.3.0",
     "lodash": "4.17.10",
     "ng2-cordova-oauth": "0.0.8",
+    "npm": "^6.4.1",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26"
