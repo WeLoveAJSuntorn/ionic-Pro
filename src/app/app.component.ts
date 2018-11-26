@@ -11,6 +11,7 @@ import { SlideBoxPage } from '../pages/slide-box/slide-box.page';
 import { WordpressListPage } from '../pages/wordpress/list/wordpress.list.page';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth.service';
+import { CartoonsPage } from '../pages/cartoons/cartoons';
 
 @Component({
 	templateUrl: 'app.html'
@@ -38,8 +39,7 @@ export class MyApp {
 			// { title: 'Components', component: ComponentsListPage, icon: 'grid' }
 			{ title: 'Home', component: HomePage, icon: 'home' },
 			{ title: 'Teams', component: TeamsPage, icon: 'md-people' },
-			{ title: 'Cartoons', component : HomePage, icon: 'ios-book'}
-			
+			{ title: 'Cartoons', component : CartoonsPage, icon: 'ios-book'}
 			
 		];
 	}
