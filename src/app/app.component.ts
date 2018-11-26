@@ -7,6 +7,7 @@ import { GoogleMapsPage } from '../pages/google-maps/google-maps.page';
 
 import { HomePage } from '../pages/home/home.page';
 import { TeamsPage } from '../pages/teams/teams';
+import { CartoonsPage } from '../pages/cartoons/cartoons';
 import { SlideBoxPage } from '../pages/slide-box/slide-box.page';
 import { WordpressListPage } from '../pages/wordpress/list/wordpress.list.page';
 import { LoginPage } from '../pages/login/login';
@@ -38,7 +39,7 @@ export class MyApp {
 			// { title: 'Components', component: ComponentsListPage, icon: 'grid' }
 			{ title: 'Home', component: HomePage, icon: 'home' },
 			{ title: 'Teams', component: TeamsPage, icon: 'md-people' },
-			{ title: 'Cartoons', component : HomePage, icon: 'ios-book'}
+			{ title: 'Cartoons', component : CartoonsPage, icon: 'ios-book'}
 			
 			
 		];
