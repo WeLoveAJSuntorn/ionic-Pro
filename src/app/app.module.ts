@@ -19,7 +19,7 @@ import { SlideBoxModule } from '../pages/slide-box/slide-box.module';
 import { WordpressModule } from '../pages/wordpress/wordpress.module';
 import { MyApp } from './app.component';
 import { TeamsPageModule } from '../pages/teams/teams.module';
-import { CartoonsPageModule } from '../pages/cartoons/cartoons.module'
+import { CartoonsPageModule } from '../pages/cartoons/cartoons.module';
 
 @NgModule({
 	declarations: [
