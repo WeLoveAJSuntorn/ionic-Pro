@@ -18,6 +18,8 @@ import { HomeModule } from '../pages/home/home.module';
 import { SlideBoxModule } from '../pages/slide-box/slide-box.module';
 import { WordpressModule } from '../pages/wordpress/wordpress.module';
 import { MyApp } from './app.component';
+import { TeamsPageModule } from '../pages/teams/teams.module';
+import { CartoonsPageModule } from '../pages/cartoons/cartoons.module'
 
 @NgModule({
 	declarations: [
@@ -34,6 +36,8 @@ import { MyApp } from './app.component';
 		ComponentsModule,
 		GoogleMapsModule,
 		HomeModule,
+		TeamsPageModule,
+		CartoonsPageModule,
 		SlideBoxModule,
 		WordpressModule,
 		NgxErrorsModule,
