@@ -28,8 +28,14 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  favorite:   #69BB7B
+  favorite:   #69BB7B,
+  home-navbar: rgb(32, 189, 11),
+  cartoons-navbar: #c20e0e,
 );
+
+.toolbar-background {
+  background-color: blue;
+}
 
 
 // App Theme
