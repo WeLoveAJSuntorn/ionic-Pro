@@ -11,7 +11,8 @@ import { CallService } from '../../services/call.service';
 import { MapsService } from '../../services/maps.service';
 import { InAppBrowserService } from '../../services/in-app-browser.service';
 import { data } from './home-data';
-
+import { AuthService } from '../../services/auth.service';
+ 
 @Component({
 	templateUrl: 'home.html',
 	providers: []
@@ -26,7 +27,8 @@ export class HomePage {
 		private callService: CallService,
 		private mapsService: MapsService,
 		private browserService: InAppBrowserService,
-		nav: Nav
+		nav: Nav,
+		private auth: AuthService
 	) {
 		this.nav = nav;
 		this.initTiles();
