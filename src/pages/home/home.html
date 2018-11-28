@@ -13,6 +13,9 @@
 	<ion-card-title >
 		<ion-icon name= "home" itme-large ></ion-icon>
 		This is an ionic project
+		<ion-card-content *ngIf="auth.getEmail()">
+			Welcome {{auth.getEmail()}}
+		</ion-card-content>
 	</ion-card-title>
 
 
