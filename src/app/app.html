@@ -10,9 +10,16 @@
 			{{auth.getEmail()}}
 		</ion-list-header>
 		<ion-list>
+			<ion-item>
+              <ion-label>{{ 'Language' | translate }}</ion-label>
+              <ion-select [(ngModel)]="lang" (ionChange)="switchLanguage()">
+                <ion-option value="en">English</ion-option>
+                <ion-option value="th">Thai</ion-option>
+              </ion-select>
+            </ion-item>
 			<button ion-item *ngFor="let p of pages" (click)="openPage(p)">
 				<ion-icon [name]="p.icon" item-left></ion-icon>
-				{{p.title}}
+				{{p.title| translate}}
 			</button>
 			<button ion-item (click)="login()" *ngIf="auth.authenticated">
 					<ion-icon name="log-in" item-left></ion-icon>

@@ -1,17 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { StatusBar } from '@ionic-native/status-bar';
-
 import { MenuController, Nav, Platform } from 'ionic-angular';
-import { ComponentsListPage } from '../pages/components/list/components.list.page';
-import { GoogleMapsPage } from '../pages/google-maps/google-maps.page';
-
 import { HomePage } from '../pages/home/home.page';
 import { TeamsPage } from '../pages/teams/teams';
 import { CartoonsPage } from '../pages/cartoons/cartoons';
-import { SlideBoxPage } from '../pages/slide-box/slide-box.page';
-import { WordpressListPage } from '../pages/wordpress/list/wordpress.list.page';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	templateUrl: 'app.html'
@@ -19,6 +14,7 @@ import { AuthService } from '../services/auth.service';
 export class MyApp {
 	pages;
 	rootPage;
+	lang:any;
 
 	@ViewChild(Nav) nav: Nav;
 
@@ -26,23 +22,18 @@ export class MyApp {
 		private platform: Platform,
 		private menu: MenuController,
 		private statusBar: StatusBar,
-		private auth: AuthService
+		private auth: AuthService,
+		public translate: TranslateService
 	) {
 		this.initializeApp();
-
-		// set our app's pages
 		this.pages = [
-			// { title: 'Home', component: HomePage, icon: 'home' },
-			// { title: 'Wordpress', component: WordpressListPage, icon: 'logo-wordpress' },
-			// { title: 'Slides', component: SlideBoxPage, icon: 'swap' },
-			// { title: 'Google maps', component: GoogleMapsPage, icon: 'map' },
-			// { title: 'Components', component: ComponentsListPage, icon: 'grid' }
 			{ title: 'Home', component: HomePage, icon: 'home' },
 			{ title: 'Teams', component: TeamsPage, icon: 'md-people' },
 			{ title: 'Cartoons', component : CartoonsPage, icon: 'ios-book'}
-			
-			
 		];
+			this.lang = 'en';
+			this.translate.setDefaultLang('en');
+			this.translate.use('en');
 	}
 
 	initializeApp() {
@@ -71,6 +62,10 @@ export class MyApp {
 		this.nav.setRoot(LoginPage);
 	}
 
+	switchLanguage(){
+		this.translate.use(this.lang);
+	}
+
 	// logout() {
 	// 	this.menu.close();
 	// 	this.auth.signOut();
@@ -90,8 +85,6 @@ export class MyApp {
 				this.rootPage = LoginPage;
 			  }
 			);
-		// this.menu.close();
-		// this.nav.setRoot(page.component);
 	}
 
 }

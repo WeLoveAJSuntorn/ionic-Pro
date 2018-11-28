@@ -20,6 +20,13 @@ import { WordpressModule } from '../pages/wordpress/wordpress.module';
 import { MyApp } from './app.component';
 import { TeamsPageModule } from '../pages/teams/teams.module';
 import { CartoonsPageModule } from '../pages/cartoons/cartoons.module';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+export function createTranslateLoader(http: HttpClient) {
+	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  }
 
 @NgModule({
 	declarations: [
@@ -41,6 +48,14 @@ import { CartoonsPageModule } from '../pages/cartoons/cartoons.module';
 		SlideBoxModule,
 		WordpressModule,
 		NgxErrorsModule,
+		HttpClientModule,
+    	TranslateModule.forRoot({
+      	loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [
